@@ -51,7 +51,21 @@ class UnilevelTree
 
     #TODO
     def self.same_line?(user_id_a, user_id_b)
-        return true
+        mayor = user_id_a
+        menor = user_id_b
+
+        if user_id_b > mayor
+            mayor = user_id_b
+            menor = user_id_a
+        end        
+
+            
+        if @users[mayor].parent_id == menor
+            return true
+        else
+            return false
+        end
+        
     end
 
 end
